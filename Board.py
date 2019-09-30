@@ -146,18 +146,20 @@ class Board:
         check = tkinter.Button(master=frame,command=self.check_grid,text="Check")
         check.grid(row=0,column=0)
         self.number_clues()
+
         across_box = tkinter.Listbox(master=frame)
         across_box.insert(END,"Across")
         for clue in self.across:
             across_box.insert(END,self.across[clue]+" : "+clue)
-        across_box.config(width=0,height=0)
-        across_box.grid(row=0,column=len(self.layout[0])+1,rowspan=len(self.layout)+1,padx=10,pady=10)
+        across_box.config(width=50,height=10)
+        across_box.grid(row=0,column=len(self.layout[0])+1,rowspan=6,padx=10,pady=10)
+
         down_box = tkinter.Listbox(master=frame)
         down_box.insert(END,"Down")
         for clue in self.down:
             down_box.insert(END,self.down[clue]+" : "+clue)
-        down_box.config(width=0,height=0)
-        down_box.grid(row=0,column=len(self.layout[0])+2,rowspan=len(self.layout)+1,padx=10,pady=10)
+        down_box.config(width=50,height=10)
+        down_box.grid(row=7,column=len(self.layout[0])+1,rowspan=6,padx=10,pady=10)
         tk.mainloop()
 
 if __name__ == "__main__":
